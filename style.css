@@ -4,12 +4,7 @@ body{
     background-color: black;
     color: white;
     overflow: hidden;
-    /*so that no scrolling in all except,
-    except for main-content, which we'll particularly set
-    overflow to scroll :)*/
 }
-/*!!!HEY DON'T GIVE BG COLOR FOR * UNIVERSAL SELECTOR, 
-IT DOES SO FOR ALL INCLUDING FOR DIV TEXT, ONLY DO ABOVE FOR BODY!!!*/
 
 .main{
     display: flex;
@@ -18,17 +13,17 @@ IT DOES SO FOR ALL INCLUDING FOR DIV TEXT, ONLY DO ABOVE FOR BODY!!!*/
 }
 
 .sidebar{
-    background-color: #000000; /*can check with a colour picker from website screenshot.*/
+    background-color: #000000; 
     margin: 0.5rem;
     width:340px;
-    border-radius: 1rem; /*equal to 16 pixels on my browser*/
+    border-radius: 1rem; 
 }
 
 .main-content{
     background-color: #121212; 
-    flex: 1;/*meaning to give remaining elements as much they want as per their contents, but give me remaining everything else :)*/
+    flex: 1;
     border-radius: 1rem;
-    overflow: auto; /*can be scrollable now main-content*/
+    overflow: auto; 
     padding: 0 1.5rem;
 }
 
@@ -40,10 +35,10 @@ IT DOES SO FOR ALL INCLUDING FOR DIV TEXT, ONLY DO ABOVE FOR BODY!!!*/
     flex-direction: column;
     justify-content: center;
     height: 100px;
-    padding: 0.25rem 0.75rem; /*for 8ox and 12px*/
+    padding: 0.25rem 0.75rem; 
 }
 .nav-option{
-    height: 2.5rem; /*for 40px*/
+    height: 2.5rem; 
     opacity: 0.7;
     padding: 0.25rem 0.75rem;
 }
@@ -53,10 +48,7 @@ IT DOES SO FOR ALL INCLUDING FOR DIV TEXT, ONLY DO ABOVE FOR BODY!!!*/
 a{  
     text-decoration: none;
     color: white;
-}/*idk y but this acted weird with bg black, so i have to explicity set it to above color i.e same as for nav-option
-got it it's becasue of universal selector bg color, removed it put it for body
-so now we don't have to give bg color seperately for each effing text*/
-
+}
 .nav-option a{
     margin-left: 1rem;
     font-size: 1rem;
@@ -105,6 +97,7 @@ so now we don't have to give bg color seperately for each effing text*/
     border-radius: 0.75rem;
     margin: 0.75rem 0 1.75rem 0;
     padding: 0.75rem 1rem;
+    min-width: 170px;
 }
 
 .box-p1{
@@ -124,13 +117,17 @@ so now we don't have to give bg color seperately for each effing text*/
     padding: 0.25rem 1rem;
     font-weight: 700;
     margin-top: 0.5rem;
-    height: 2rem; /*to follow spotify format*/
+    height: 2rem; 
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    min-width: 8rem;
 }
 
 .sticky-nav{
-    position: sticky; /*yes from where? you have to write the position too as below:)*/
+    position: sticky; 
     top: 0;
-    z-index: 1; /*to avoid collision with content text*/
+    z-index: 1; 
     display: flex;
     background-color: #121212;
     justify-content: space-between;
@@ -165,7 +162,7 @@ so now we don't have to give bg color seperately for each effing text*/
     margin-top: 10px;
 }
 
-@media(max-width: 880px){
+@media(max-width: 928px){
     .hide{
         display: none;
     }
@@ -221,8 +218,16 @@ so now we don't have to give bg color seperately for each effing text*/
     justify-content: space-between;
 } 
 
+@media(max-width: 1000px){
+    .music-player{
+        overflow: auto;
+    }
+}
+
 .music-item{
     width: 27%;
+    min-width: 200px;
+    margin: 0px 20px;
 }
 .album{
    display: flex;
